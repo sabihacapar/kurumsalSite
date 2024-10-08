@@ -37,10 +37,10 @@
                                             </ul>
                                         </li>
                                         <li><a href="<?= SITE ?>services">HİZMETLER</a></li>
-                                        <li><a href="<?= SITE ?>projects">">PROJELER</a></li>
-                                        <li><a href="<?= SITE ?>blog">">BLOG</a></li>
+                                        <li><a href="<?= SITE ?>projects">PROJELER</a></li>
+                                        <li><a href="<?= SITE ?>blog">BLOG</a></li>
 
-                                        <li><a href="<?= SITE ?>contact">">İLETİŞİM</a></li>
+                                        <li><a href="<?= SITE ?>contact">İLETİŞİM</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -48,7 +48,7 @@
                         <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                             <div class="Appointment">
                                 <div class="book_btn d-none d-lg-block">
-                                    <a href="<?= SITE ?>contact">">BİZE ULAŞIN</a>
+                                    <a href="<?= SITE ?>contact">BİZE ULAŞIN</a>
                                 </div>
                             </div>
                         </div>
