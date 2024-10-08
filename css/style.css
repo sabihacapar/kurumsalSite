@@ -3213,14 +3213,14 @@ h3 {
 
 /* line 1, ../../Arafath/CL/Cl November/222. Directory/HTML/scss/_popular_catagory.scss */
 .popular_catagory_area {
-  padding-top: 150px;
-  padding-bottom: 120px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 @media (max-width: 767px) {
   /* line 1, ../../Arafath/CL/Cl November/222. Directory/HTML/scss/_popular_catagory.scss */
   .popular_catagory_area {
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 20px;
   }
 }
