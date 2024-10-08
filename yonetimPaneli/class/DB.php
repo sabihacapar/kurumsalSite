@@ -640,4 +640,30 @@ class DB
             return false;
         }
     }
+    public function MailGonder($mail, $konu = "", $mesaj)
+    {
+        $posta = new PHPMailer();
+        $posta->CharSet = "UTF-8";
+        $posta->isSMTP();                                   // SMTP ile gönderim
+        $posta->Host = "smtp.gmail.com";                    // Gmail SMTP sunucusu
+        $posta->SMTPAuth = true;                            // SMTP kimlik doğrulamasını aç
+        $posta->Username = "ornek@gmail.com";          // SMTP kullanıcı adı (Gmail adresiniz)
+        $posta->Password = "uygulama şifresi";                       // SMTP şifresi (Uygulama şifresi olmalı)
+        $posta->SMTPSecure = "tls";                         // TLS kullan
+        $posta->Port = 587;                                 // Port numarası
+
+        $posta->From = "ornek@gmail.com";               // Gönderen e-posta adresi
+        $posta->FromName = "Site Adı";                      // Gönderen adı
+        $posta->addAddress($mail);                           // Alıcı adresi
+        $posta->Subject = $konu;                            // E-posta konusu
+        $posta->Body = $mesaj;                              // E-posta içeriği
+        $posta->isHTML(true);                               // HTML formatında gönderim
+
+        if (!$posta->Send()) {
+            // Hata mesajını buradan döndürün
+            return "Mail gönderme hatası: " . $posta->ErrorInfo;
+        } else {
+            return true;
+        }
+    }
 }
