@@ -1,6 +1,6 @@
 Options -indexes
 RewriteEngine On
-RewriteBase /kurumsal-site/yonetimPaneli/
+RewriteBase /kurumsalSite/yonetimPaneli/
 RewriteRule ^list/(.*)$ index.php?page=list&tables=$1 [NC]
 RewriteRule ^module-add$ index.php?page=module-add [NC]
 RewriteRule ^add/(.*)$ index.php?page=add&tables=$1 [NC]

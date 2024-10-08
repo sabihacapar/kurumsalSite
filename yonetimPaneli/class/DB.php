@@ -475,8 +475,15 @@ class DB
   `orderno` int(11) DEFAULT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;');
-                $moduleAdd = $this->SqlWork("INSERT INTO modules", "SET title=?, `tables`=?, state=?, date=?", array($title, $table, $state, date("Y-m-d"))); // Tarih formatını düzelttik
-                $categoriesAdd = $this->SqlWork("INSERT INTO categories", "SET title=?,seflink=?, `tables`=?, state=?, date=?", array($title, $table, 'modul', 1, date("Y-m-d"))); // Tarih formatını düzelttik
+                $moduleAdd = $this->SqlWork(
+                    "INSERT INTO modules (title, `tables`, state, date) VALUES (?, ?, ?, ?)",
+                    array($title, $table, $state, date("Y-m-d"))
+                );
+
+                $categoriesAdd = $this->SqlWork(
+                    "INSERT INTO categories (title, seflink, `tables`, state, date) VALUES (?, ?, ?, ?, ?)",
+                    array($title, $this->seflink($title), 'modul', 1, date("Y-m-d"))
+                );
 
                 if ($moduleAdd) {
                     return true;
