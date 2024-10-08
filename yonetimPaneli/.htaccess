@@ -1,0 +1,12 @@
+Options -indexes
+RewriteEngine On
+RewriteBase /kurumsal-site/yonetimPaneli/
+RewriteRule ^list/(.*)$ index.php?page=list&tables=$1 [NC]
+RewriteRule ^module-add$ index.php?page=module-add [NC]
+RewriteRule ^add/(.*)$ index.php?page=add&tables=$1 [NC]
+RewriteRule ^update/(.*)/(.*)$ index.php?page=update&tables=$1&id=$2 [NC]
+RewriteRule ^delete/(.*)/(.*)$ index.php?page=delete&tables=$1&id=$2 [NC]
+RewriteRule ^seo-settings$ index.php?page=seo-settings [NC]
+RewriteRule ^contact$ index.php?page=contact [NC]
+RewriteRule ^register$ index.php?page=register [NC]
+RewriteRule ^login$ login.php [NC]

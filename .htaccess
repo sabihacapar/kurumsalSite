@@ -1,0 +1,8 @@
+Options -indexes
+RewriteEngine On
+RewriteBase /kurumsal-site/
+RewriteRule ^institutional/(.*)$ index.php?page=institutional&seflink=$1 [NC]
+RewriteRule ^services$ index.php?page=services [NC]
+RewriteRule ^projects$ index.php?page=projects [NC]
+RewriteRule ^blog$ index.php?page=blog [NC]
+RewriteRule ^contact$ index.php?page=contact [NC]
