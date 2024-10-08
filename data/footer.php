@@ -5,13 +5,13 @@
                 <div class="col-xl-4 col-md-6 col-lg-3">
                     <div class="footer_widget">
                         <div class="footer_logo">
-                            <a href="#">
+                            <a href="<?= SITE ?>">
                                 <img src="<?= SITE ?>img/footer_logo.png" alt="">
                             </a>
                         </div>
                         <p>
-                            Esteem spirit temper too say adieus who <br> direct esteem. It esteems luckily or <br>
-                            picture placing drawing.
+                            Profesyonel web siteleri için<br> doğru adrestesiniz <br>
+
                         </p>
                         <div class="socail_links">
                             <ul>
@@ -43,13 +43,25 @@
                 <div class="col-xl-2 col-md-6 col-lg-3">
                     <div class="footer_widget">
                         <h3 class="footer_title">
-                            Services
+                            Hızlı Menü
                         </h3>
                         <ul>
-                            <li><a href="#">SEO/SEM </a></li>
-                            <li><a href="#">Web design </a></li>
-                            <li><a href="#">Ecommerce</a></li>
-                            <li><a href="#">Digital marketing</a></li>
+                            <li><a href="<?= SITE ?>">ANASAYFA </a></li>
+                            <?php
+                            $kurumsal = $DB->getAll("institutional", " WHERE state=?", array(1), "ORDER BY orderno ASC");
+                            if ($kurumsal) {
+                                for ($i = 0; $i < count($kurumsal); $i++) {
+                            ?>
+                            <li><a
+                                    href="<?= SITE ?>institutional/<?= $kurumsal[$i]["seflink"] ?>"><?= stripslashes($kurumsal[$i]["title"]) ?></a>
+                            </li>
+                            <?php
+
+                                }
+                            }
+
+                            ?>
+
                         </ul>
 
                     </div>
@@ -57,31 +69,24 @@
                 <div class="col-xl-2 col-md-6 col-lg-2">
                     <div class="footer_widget">
                         <h3 class="footer_title">
-                            Useful Links
+                            Diğer Sayfalar
                         </h3>
                         <ul>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#"> Contact</a></li>
-                            <li><a href="#">Support</a></li>
+                            <?php $modules = $DB->getAll("modules", "WHERE state=?", array(1), "ORDER BY ID ASC");
+                            for ($i = 0; $i < count($modules); $i++): ?>
+                            <li>
+                                <a href="<?= SITE ?>list/<?= $modules[$i]["tables"] ?>">
+                                    <p><?= $modules[$i]["title"] ?></p>
+                                </a>
+                            </li>
+                            <?php endfor ?>
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6 col-lg-4">
-                    <div class="footer_widget">
-                        <h3 class="footer_title">
-                            Subscribe
-                        </h3>
-                        <form action="#" class="newsletter_form">
-                            <input type="text" placeholder="Enter your mail">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                        <p class="newsletter_text">Esteem spirit temper too say adieus who direct esteem esteems
-                            luckily.</p>
-                    </div>
-                </div>
+
             </div>
         </div>
+    </div>
     </div>
     <div class="copy-right_text">
         <div class="container">
@@ -91,9 +96,9 @@
                     <p class="copy_right text-center">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;<script>
-                            document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        document.write(new Date().getFullYear());
+                        </script> Tüm hakları saklıdır<i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                            href="https://colorlib.com" target="_blank">İnce</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>
