@@ -24,9 +24,9 @@
                                                 if ($kurumsal) {
                                                     for ($i = 0; $i < count($kurumsal); $i++) {
                                                 ?>
-                                                        <li><a
-                                                                href="<?= SITE ?>institutional/<?= $kurumsal[$i]["seflink"] ?>"><?= stripslashes($kurumsal[$i]["title"]) ?></a>
-                                                        </li>
+                                                <li><a
+                                                        href="<?= SITE ?>institutional/<?= $kurumsal[$i]["seflink"] ?>"><?= stripslashes($kurumsal[$i]["title"]) ?></a>
+                                                </li>
                                                 <?php
 
                                                     }
@@ -38,7 +38,7 @@
                                         </li>
                                         <li><a href="<?= SITE ?>services">HİZMETLER</a></li>
                                         <li><a href="<?= SITE ?>projects">PROJELER</a></li>
-                                        <li><a href="<?= SITE ?>blog">BLOG</a></li>
+                                        <li><a href="<?= SITE ?>blogs">BLOG</a></li>
 
                                         <li><a href="<?= SITE ?>contact">İLETİŞİM</a></li>
                                     </ul>
